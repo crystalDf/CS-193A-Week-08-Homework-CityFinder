@@ -66,11 +66,13 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onMapLoaded() {
                         readCities();
+
                         ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(
                                 MainActivity.this,
                                 android.R.layout.simple_spinner_item,
                                 mCityNames
                         );
+
                         mCitySpinner.setAdapter(cityAdapter);
                         mCitySpinner.setSelection(0, true);
                         mCitySpinner.setPrompt(getResources().getString(R.string.spinner_prompt));
@@ -87,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
                             }
                         });
+
                         mGoogleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                             @Override
                             public boolean onMarkerClick(Marker marker) {
